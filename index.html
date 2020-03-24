@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link rel="stylesheet" href="css/style.css" />
+		<title>苗</title>
+	</head>
+	<body>
+		<div class="slider">
+			<div class="slide visible">
+				<img src="img/a01.jpg" alt="" />
+			</div>
+			<div class="slide">
+				<img src="img/a02.jpg" alt="" />
+			</div>
+			<div class="slide">
+				<img src="img/a03.jpg" alt="" />
+			</div>
+			<div class="slide">
+				<img src="img/a04.jpg" alt="" />
+			</div>
+			<div class="slide">
+				<img src="img/a05.jpg" alt="" />
+			</div>
+			<div class="slide">
+				<img src="img/a06.jpg" alt="" />
+			</div>
+			<div class="slide">
+				<img src="img/a07.jpg" alt="" />
+			</div>
+		</div>
+		<script>
+			const slider = document.querySelector(".slider");
+			const slides = document.querySelectorAll(".slide");
+			let activeSlie = 0;
+			function changeSlide(){
+				slides[activeSlie].classList.remove("visible");
+				activeSlie++;
+				if(activeSlie>=slides.length){
+					activeSlie=0;
+				}
+				slides[activeSlie].classList.add("visible");
+			}
+			slider.addEventListener("animationstart",() =>{
+				setInterval(changeSlide,2000);
+			});
+		</script>
+	</body>
+</html>
